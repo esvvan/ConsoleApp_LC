@@ -507,5 +507,26 @@ namespace ConsoleApp2
             }
             return true;
         }
+        //136 Single number  XOR -> Negación de OR
+        public static int SingleNumber(int[] nums)
+        {
+            int result = 0;
+            for (int i = 0; i < nums.Length; i++)
+            {
+                int index = i;
+                for (int j = 0; j < nums.Length; j++)
+                {
+                    if (index == j) continue;
+                    if ((nums[index] ^ nums[j]) == 0)
+                    {
+                        nums[index] = 0;
+                        nums[j] = 0;
+                        break;
+                    }
+                }
+            }
+            foreach (var item in nums) if (item != 0) result = item;
+            return result;
+        }
     }
 }

@@ -10,7 +10,8 @@ namespace ConsoleApp2
 
         static void Main(string[] args)
         {
-            Console.WriteLine(LT1.IsPalindromeString("somosonosomos"));
+            int[] nums = { 4, 1, 2, 1, 2 };
+            Console.WriteLine(LT1.SingleNumber(nums));
         }
 
     }
