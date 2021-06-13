@@ -10,8 +10,14 @@ namespace ConsoleApp2
 
         static void Main(string[] args)
         {
-            int[] nums = { 4, 1, 2, 1, 2 };
-            Console.WriteLine(LT1.SingleNumber(nums));
+            MinStack minStack = new MinStack();
+            minStack.Push(-2);
+            minStack.Push(0);
+            minStack.Push(-3);
+            minStack.GetMin(); // return -3
+            minStack.Pop();
+            minStack.Top();    // return 0
+            minStack.GetMin(); // return -2
         }
 
     }
