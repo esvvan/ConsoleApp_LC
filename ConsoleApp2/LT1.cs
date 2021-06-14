@@ -528,5 +528,26 @@ namespace ConsoleApp2
             foreach (var item in nums) if (item != 0) result = item;
             return result;
         }
+        //167 Two Sum II
+        public static int[] TwoSumII(int target, int[] nums)
+        {
+            int[] auxarr = new int[nums.Length + 1];
+            nums.CopyTo(auxarr, 1);
+            
+            Hashtable hashtable = new Hashtable();
+            int[] result = new int[2];
+
+            for (int i = 1; i < auxarr.Length; i++)
+            {
+                hashtable.Add(auxarr[i], i);
+                int complement = target - auxarr[i];
+                if (hashtable.ContainsKey(complement))
+                {
+                    result[0] = (int)hashtable[complement];
+                    result[1] = (int)hashtable[target - complement];
+                }
+            }
+            return result;
+        }
     }
 }

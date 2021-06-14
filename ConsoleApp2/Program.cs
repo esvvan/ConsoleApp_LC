@@ -10,14 +10,9 @@ namespace ConsoleApp2
 
         static void Main(string[] args)
         {
-            MinStack minStack = new MinStack();
-            minStack.Push(-2);
-            minStack.Push(0);
-            minStack.Push(-3);
-            minStack.GetMin(); // return -3
-            minStack.Pop();
-            minStack.Top();    // return 0
-            minStack.GetMin(); // return -2
+            int[] nums = { 2, 7, 11, 15 };
+            int[] twoSum = LT1.TwoSumII(9, nums);
+            foreach (var item in twoSum) Console.WriteLine(item);
         }
 
     }
